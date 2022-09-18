@@ -1,9 +1,9 @@
 import Head from 'next/head'
 
 export default function Layout({
-  children,
+    children,
 }: {
-  children: React.ReactNode
+    children: React.ReactNode,
 }) {
     return (
         <div className={'container mx-auto'}>
