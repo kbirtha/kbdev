@@ -86,7 +86,7 @@ export function NBATeams({
         />
         <div className={'text-2xl'}>{city} {name}</div>
       </summary>
-      <div className={'flex flex-col bg-white px-5 py-3 border-t border-gray-300 text-sm font-light'}>
+      <div className={'players-container flex flex-col bg-white px-5 py-3 border-t border-gray-300 text-sm font-light'}>
         <div className={'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 flex-wrap p-4 rounded-lg justify-start items-center w-full gap-5'}>  
         { players && players.map(player => (
             <div key={player.pid} className={'mx-auto w-full max-w-xs sm:max-w-md md:max-w-xl'}>
@@ -101,6 +101,7 @@ export function NBATeams({
                 rebounds={(player.reb ? player.reb : '--')}
                 assists={(player.ast ? player.reb : '--')}
                 teamLogo={logoUrl}
+                slug={player.slug}
               />
             </div>
           ))}
