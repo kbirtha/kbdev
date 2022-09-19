@@ -21,7 +21,7 @@ function filterPlayersByTeamAbbreviation(arr, abrev) {
   });
 }
 
-//Write a fetcher function to wrap the native fetch function and return the result of a call to url in json format
+//fetcher function to wrap the native fetch function and return the result of a call to url in json format
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
 export default function Index() {
@@ -76,8 +76,8 @@ export function NBATeams({
 }: TeamProps) {
 
   return (
-    <details key={uuidv4()} className={'flex flex-row bg-white hover:bg-gray-100 open:duration-300'}>
-      <summary key={uuidv4()} className={'flex flex-nowrap bg-inherit px-5 py-3 text-lg cursor-pointer justify-start items-center '}>
+    <details data-testid={teamId +'-'+ name} className={'flex flex-row bg-white hover:bg-gray-100 open:duration-300'}>
+      <summary className={'flex flex-nowrap bg-inherit px-5 py-3 text-lg cursor-pointer justify-start items-center '}>
           <Image
           src={logoUrl}
           alt={'logo'}
@@ -86,8 +86,8 @@ export function NBATeams({
         />
         <div className={'text-2xl'}>{city} {name}</div>
       </summary>
-      <div key={uuidv4()} className={'flex flex-col bg-white px-5 py-3 border-t border-gray-300 text-sm font-light'}>
-        <div key={uuidv4()} className={'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 flex-wrap p-4 rounded-lg justify-start items-center w-full gap-5'}>  
+      <div className={'flex flex-col bg-white px-5 py-3 border-t border-gray-300 text-sm font-light'}>
+        <div className={'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 flex-wrap p-4 rounded-lg justify-start items-center w-full gap-5'}>  
         { players && players.map(player => (
             <div key={player.pid} className={'mx-auto w-full max-w-xs sm:max-w-md md:max-w-xl'}>
               <PlayerCard 

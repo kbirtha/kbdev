@@ -1,7 +1,4 @@
-import Head from 'next/head'
 import Image from 'next/image'
-import styles from './layout.module.css'
-import utilStyles from '../styles/utils.module.css'
 
 interface PlayerProps {
     headshot: string
@@ -65,9 +62,9 @@ export default function PlayerCard({
                     <span className={'pr-1 mr-1 border-r border-gray-400 leading-tight'}>#{jerseyNum}</span>
                     <span className={'leading-tight'}>{position}</span>
                 </div>
-                <div className={'flex flex-col grow'}>
+                <div className={'flex flex-col grow relative'}>
                     <div className={'text-base text-black font-bold leading-5'}>{fn}</div>
-                    <div className={'text-base text-black font-bold leading-5'}>{ln}</div>
+                    <div className={'text-base text-black font-bold leading-5 star'}>{ln}</div>
                 </div>
             </div>
         </div>
