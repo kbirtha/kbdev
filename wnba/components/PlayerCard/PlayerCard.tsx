@@ -11,6 +11,7 @@ interface PlayerProps {
     assists: string
     pid: number
     teamLogo: string
+    slug: string
   }
 
 export default function PlayerCard({
@@ -24,6 +25,7 @@ export default function PlayerCard({
   assists = '--',
   pid,
   teamLogo,
+  slug,
 }: PlayerProps) {
     
   return (
@@ -37,25 +39,25 @@ export default function PlayerCard({
             layout={'intrinsic'}
             />
         </div>
-        <div className='absolute grow p-0 w-full -left-9'>
-            <Image 
-            className={'grayscale opacity-10'} 
-            src={teamLogo} 
-            height={'100%'} 
-            width={'260px'} 
-            objectFit={'cover'}
-            layout={'intrinsic'}
-            />
-        </div>
         <div className={'flex flex-row flex-nowrap grow relative'}>
-            <div className={'flex pl-1'}>
-                <Image
+            <div className={'absolute top-0 left-0 h-full w-full'}
+                style={{
+                    backgroundImage: `url(${teamLogo})`,
+                    backgroundPosition: '-33px -73px',
+                    backgroundRepeat: 'no-repeat',
+                    backgroundSize: '260px',
+                    filter: 'grayscale(1)',
+                    opacity: .1,
+                }}
+            />
+            <div className={'flex pl-1 mt-2'}>
+            <Image
                 src={headshot}
-                alt={'logo'}
-                width={'100%'}
+                alt={slug}
+                width={'123px'}
                 height={'100%'}
                 layout={'intrinsic'}
-                />
+            />
             </div>
             <div className={'flex flex-col gap-y-0 mt-5 grow'}>
                 <div className={'flex-row items-baseline text-xs text-gray-400 font-normal'}>
