@@ -20,7 +20,7 @@ describe('team list', () => {
   describe('when team api is called', () => {
     beforeEach(async () => {
       render(<Index />)
-      await waitForElementToBeRemoved(() => screen.getByText('Loading...'))
+      await waitForElementToBeRemoved(() => screen.getByTestId('loading'))
     })
 
     it('page is rendered, team and player info is included', async () => {

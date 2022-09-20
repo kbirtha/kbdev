@@ -37,6 +37,7 @@ export default function PlayerCard({
             width={'35px'} 
             objectFit={'cover'}
             layout={'intrinsic'}
+            alt={'team logo'}
             />
         </div>
         <div className={'flex flex-row flex-nowrap grow relative'}>
