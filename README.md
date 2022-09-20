@@ -16,8 +16,10 @@
 **Screenshots**
 
 **_Mobile_**
+
 <img width="310" alt="image" src="https://user-images.githubusercontent.com/9437976/191108410-0bf918f4-b058-42d6-a166-15b8e5a596ee.png">
 
 **_Desktop_**
+
 <img width="976" alt="image" src="https://user-images.githubusercontent.com/9437976/191108222-b151975d-206b-44cd-b8d2-1e7d16ef3a80.png">
 
