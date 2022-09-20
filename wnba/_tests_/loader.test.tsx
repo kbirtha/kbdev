@@ -5,6 +5,6 @@ import '@testing-library/jest-dom'
 describe('Loading', () => {
   it('renders a loader', async () => {
     render(<Loading />)
-    screen.getByText('Loading...')
+    screen.getByTestId('loading')
   })
 })

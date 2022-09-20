@@ -4,7 +4,11 @@ import '@testing-library/jest-dom'
 
 describe('Layout', () => {
   it('renders a Layout', async () => {
-    render(<Layout />)
-    screen.getByText('NBA Teams and Players')
+    render(
+    <Layout>
+      <div>Test content</div>
+    </Layout>)
+    screen.getByText('Teams and Players')
+    screen.getByText('Test content')
   })
 })

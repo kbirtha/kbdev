@@ -77,12 +77,12 @@ export function NBATeams({
 
   return (
     <details data-testid={teamId +'-'+ name} className={'flex flex-row bg-white hover:bg-gray-100 open:duration-300'}>
-      <summary className={'flex flex-nowrap bg-inherit px-5 py-3 text-lg cursor-pointer justify-start items-center '}>
+      <summary className={'flex flex-nowrap bg-inherit px-5 py-2 text-lg cursor-pointer justify-start items-center '}>
           <Image
           src={logoUrl}
           alt={'logo'}
-          width={'50px'}
-          height={'50px'}
+          width={'40px'}
+          height={'40px'}
         />
         <div className={'text-2xl'}>{city} {name}</div>
       </summary>
