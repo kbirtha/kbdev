@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import Image from 'next/image'
 
 interface PlayerProps {
@@ -14,6 +15,19 @@ interface PlayerProps {
     slug: string
   }
 
+  function GetDefaultHeadshotImg({alt, ...props}) {
+    const [src, setSrc] = React.useState(props.src);
+  
+    return (
+      <Image
+        {...props}
+        src={src}
+        alt={alt}
+        onError={() => setSrc('/fallback.png')}
+      />
+    );
+  }
+
 export default function PlayerCard({
   headshot,
   fn,
@@ -27,7 +41,15 @@ export default function PlayerCard({
   teamLogo,
   slug,
 }: PlayerProps) {
-    
+
+    const HeadShotImg = GetDefaultHeadshotImg({
+        alt: slug,
+        src: headshot,
+        width: '123px',
+        height: '100%',
+        layout: 'intrinsic',
+    })
+
   return (
     <div key={pid} className={'flex flex-col p-0 overflow-hidden border relative border-gray-100 shadow-md shadow-gray-200 rounded-lg w-full '}>
         <div className='absolute p-0 top-0 right-0'>
@@ -52,13 +74,15 @@ export default function PlayerCard({
                 }}
             />
             <div className={'flex pl-1 mt-2'}>
-            <Image
+                {HeadShotImg}
+            {/* <Image
+                onError={(e) => addDefaultSrc(e)} 
                 src={headshot}
                 alt={slug}
                 width={'123px'}
                 height={'100%'}
                 layout={'intrinsic'}
-            />
+            /> */}
             </div>
             <div className={'flex flex-col gap-y-0 mt-5 grow'}>
                 <div className={'flex-row items-baseline text-xs text-gray-400 font-normal'}>
@@ -87,3 +111,9 @@ export default function PlayerCard({
         </div>
     </div>
 )}
+
+
+function setSrc(arg0: string): void {
+    throw new Error('Function not implemented.')
+}
+
